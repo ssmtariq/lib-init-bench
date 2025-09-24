@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Description: DNA Sequence Visualization Lambda Function
+
+Resources:
+  DnaVisualizerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: handler.lambda_handler
+      Runtime: python3.11
+      Architectures:
+        - x86_64
+      MemorySize: 256
+      Timeout: 15
+      Environment:
+        Variables:
+          COLD_START_TRIGGER: initial

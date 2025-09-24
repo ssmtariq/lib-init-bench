@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Description: JSON Transformation Lambda Function
+
+Resources:
+  JsonTransformFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: com.example.transformer.Handler::handleRequest
+      Runtime: java17
+      Architectures:
+        - x86_64
+      MemorySize: 512
+      Timeout: 15
+      Environment:
+        Variables:
+          COLD_START_TRIGGER: initial

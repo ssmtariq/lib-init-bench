@@ -1,0 +1,2 @@
+nltk==3.*
+sentence-transformers==2.*
